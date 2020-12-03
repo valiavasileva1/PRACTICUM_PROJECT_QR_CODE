@@ -1,0 +1,47 @@
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #E7E7E7;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+
+#header_div{
+background-image: url("img/bg.jpg");
+align-items: center;
+}
+
+.container:hover .image {
+opacity: 0.3;
+}
+
+.flex-container-row {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: row-reverse;
+flex-direction: row-reverse;
+width: 500px;
+height: 500px;
+background-color: white;
+}
+
+.flex-container-column {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column-reverse;
+flex-direction: column-reverse;
+width: 800px;
+height: 500px;
+background-color: white;
+}
+
+.flex-item {
+background-color: cornflowerblue;
+width: 100px;
+height: 100px;
+margin: 10px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Code Reader</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+    
+  <body>
+    <div class="jumbotron text-center" id="header_div">
+      <h1>
+        <a href="index.html">
+          <div class="container">
+            <img src="img/logo.png" class="image" style="width:110px;height:110px;"></a> Четене и създаване на QR-кодове
+          </div>
+          
+      </h1>
+
+     
+    </div>
+        
+    <div class="container" id="flip">Натиснете за избор</div>
+      <div id="panel" class="container" >
+        <div class="row">
+    
+          <div class="col-sm-4">
+            <h3>За прочитане на QR-код</h3>
+            <p>Натиснете бутон Прочитане</p>
+            <p><button id="Readingbtn" type="button" class="btn btn-success" >Прочитане</button></p>
+          </div>
+          <div class="col-sm-4">
+            <h3>Информация</h3>
+            <p>В този сайт можете да създавате и прочитате QR-кодове</p>
+            <p></p>
+          </div>
+          <div class="col-sm-4">
+            <h3>За създаване на QR-код</h3>
+            <p>Натиснете бутон Създаване</p>
+            <p><button id="Creatingbtn" type="button" class="btn btn-success">Създаване</button></p>
+          </div>
+        </div>
+      </div>  
+        
+    <script type="text/javascript">
+      document.getElementById("Readingbtn").onclick = function () {
+        location.href = "Reading.html";
+      };
+    </script>
+    
+    <script type="text/javascript">
+      document.getElementById("Creatingbtn").onclick = function () {
+        location.href = "Creating.html";
+      };
+    </script>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#flip").click(function(){
+          $("#panel").slideToggle("slow");
+        });
+      });
+    </script>     
+  </body>
+</html>

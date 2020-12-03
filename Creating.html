@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Създаване на QR-код </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="style.css">     
+    </head>
+
+    <body>
+        <div class="jumbotron text-center" id="header_div">
+            <h1>
+              <a href="Creating.html">
+                <div class="container">
+                  <img src="img/logo.png" class="image" style="width:110px;height:110px;"></a> Създаване на QR-код
+                </div>
+                <div>
+                    <button id="Homebtn" class="btn btn-success" onclick="go_home();" >Начало</button>
+                </div>
+                
+            </h1>
+          </div>
+                
+        <form id="qrmake" target="qr_frame" method="POST"> 
+            <table align="center" width="1200" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="400" align="right" >
+                        Въведете текст който ще бъде кодиран като QR-код :&nbsp&nbsp
+                    </td> 
+                    <td width="400">
+                        <input  id="qrtext" type="text" name="text" size="80"  /> 
+                    </td> 
+                    <td>
+                        <button type="submit" class="btn btn-success" onclick="generate_qr();" > Покажи QR-код изображението</button> 
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="2">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <img align="middle" src="img/image.jpg" style="width:250px;height:250px;" >
+                    </th> 
+                </tr>  
+                <tr>
+                    <td>
+                        <iframe name="qr_frame" width="450" height="250"></iframe>
+                    </td>
+                </tr>  
+            </table>
+       
+        </form>  
+
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+        <script>                
+            function go_home () {
+                location.href = "index.html";
+            }
+            
+            function generate_qr () {
+                if (document.getElementById("qrtext").value==="") {
+                    window.alert("Не е въведен текст за кодиране като QR-код!");   
+                    return false;   
+                }
+                document.getElementById("qrmake").action="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data="+document.getElementById("qrtext").value;  
+            }
+        </script>
+    </body>
+</html>
